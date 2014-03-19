@@ -31,6 +31,7 @@ class KlassesController < ApplicationController
   end
   
   def update
+    @klass = Klass.find(params[:id])
     @klass_edited = Klass.find(params[:id])
     
     @klass_edited.term_id = params[:term_id]
