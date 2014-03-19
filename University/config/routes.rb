@@ -1,4 +1,5 @@
 University::Application.routes.draw do
+  get "students/list" => 'student#list'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
