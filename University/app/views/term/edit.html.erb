@@ -1,0 +1,11 @@
+<% if @term.errors.any? %>
+  <% @new_term.errors.full_messages.each do |msg| %>
+    <p class="error"><%= msg %></p>
+  <% end %>
+<% end %>
+
+<h1>Edit Term</h1>
+<form method="post" action="<%= update_term_path(@term.id) %>">
+	<p>Name: <input type="text" name="name" value="<%= @term.name %>"></p>
+	<p><input type="submit" value="Add"></p>
+</form>

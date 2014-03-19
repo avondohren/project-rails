@@ -1,0 +1,11 @@
+<% if @new_term %>
+  <% @new_term.errors.full_messages.each do |msg| %>
+    <p class="error"><%= msg %></p>
+  <% end %>
+<% end %>
+
+<h1>Add New Term</h1>
+<form method="post" action="<%= :create_term %>">
+	<p>Name: <input type="text" name="name"></p>
+	<p><input type="submit" value="Add"></p>
+</form>
