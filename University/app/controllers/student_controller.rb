@@ -31,9 +31,10 @@ class StudentController < ApplicationController
   
   def update
     @student = Student.find(params[:id])
-    @student.fname = params[:fname]
-    @student.lname = params[:lname]
-    if @student.save # If this fails to save, it returns FALSE.
+    @edit_student = Student.find(params[:id])
+    @edit_student.fname = params[:fname]
+    @edit_student.lname = params[:lname]
+    if @edit_student.save # If this fails to save, it returns FALSE.
       # For successful saves:
       redirect_to(student_path(@student.id))
     else
