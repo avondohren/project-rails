@@ -18,7 +18,7 @@
 <p>View a class</p>
 <ul>
 	<% @klasses.each do |klass| %>
-		<li><%= link_to(klass.name, :klass) %></li>
+		<li><%= link_to(klass.name, klass_path(klass.id)) %></li>
 	<% end %>
 </ul>
 
@@ -37,12 +37,12 @@
 <hr />
 
 <h2>Students</h2>
-<p><a href="/add/student">Add a student</a></p>
+<p><%= link_to("List all students", :students)%></p>
+<p><%= link_to("Add a student", :new_student)%>
 <p><a href="/enroll">Enroll a student</a></p>
 <p>View a student</p>
 <ul>
 	<% @students.each do |student| %>
-		<li><a href="student/<%= student.id %>"><%= student.name %></li>
+		<li><%= link_to(student.name, student_path(student.id))%></li>
 	<% end %>
 </ul>
-<p><a href="/list/students">List all students</a></p>
