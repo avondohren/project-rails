@@ -31,10 +31,13 @@ class StudentController < ActionController::Base
   
   def update
     @student = Student.find(params[:id])
-    @error = @student.update_attributes({:fname => params[:fname], :lname =< params[:lname]})
-    if @error != false
+    @student.fname = params[:fname]
+    @student.lname = params[:lname]
+    if @student.save # If this fails to save, it returns FALSE.
+      # For successful saves:
       redirect_to(student_path(@student.id))
     else
+      # Show the errors to the user.
       render "edit"
     end
   end
