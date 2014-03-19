@@ -9,7 +9,6 @@ University::Application.routes.draw do
   post "classes/:id" => 'klasses#update', :as => :update_klass
   delete "classes/:id" => 'klasses#delete', :as=> :delete_klass
   
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
