@@ -1,12 +1,12 @@
 <h1>Welcome to the Cool Table University Database</h1>
 
 <h2>Terms</h2>
-<p><a href="/list/terms">List all terms</a></p>
-<p><a href="/add/term">Add a term</a></p>
+<p><%= link_to("List all terms", :terms)%></p>
+<p><%= link_to("Add a term", :new_term)%></p>
 <p>View a term</p>
 <ul>
 	<% @terms.each do |term| %>
-		<li><a href="term/<%= term.id %>"><%= term.name %></li>
+		<li><%= link_to(term.name, term_path(term.id)) %></li>
 	<% end %>
 </ul>
 
