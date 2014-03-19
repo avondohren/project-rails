@@ -1,4 +1,4 @@
-class StudentController < ActionController::Base
+class StudentController < ApplicationController
   def index
     @students = Student.all
   end
@@ -12,7 +12,7 @@ class StudentController < ActionController::Base
   end
   
   def create
-    @student = Student.new({:fname => params[:fname], :lname =< params[:lname]})
+    @student = Student.new({:fname => params[:fname], :lname => params[:lname]})
     
     if @student.save # If this fails to save, it returns FALSE.
       
@@ -43,15 +43,11 @@ class StudentController < ActionController::Base
   end
   
   def delete
-    @student = Studnet.find(params[:id])
+    @student = Student.find(params[:id])
     
     @student.delete
     
     redirect_to(:students)
   end
   
-  def name 
-    fname + " " + lname
-  end
-
 end
