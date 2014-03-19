@@ -19,7 +19,7 @@ class TermController < ApplicationController
   
   def show
     @term = Term.find(params[:id])
-    @klasses = Term.Klasses
+    @klasses = @term.klasses
   end
     
   def edit
