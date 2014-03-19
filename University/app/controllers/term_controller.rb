@@ -28,9 +28,10 @@ class TermController < ActionController::Base
   
   def update
     @term = Term.find(params[:id])
-    name = params[:name]
     
-    if @term.update_attributes({:name => name})
+    @term.name = params[:name]
+    
+    if @term.save
       redirect_to("#{term_path(@term.id)}")
     else
       render "edit"
