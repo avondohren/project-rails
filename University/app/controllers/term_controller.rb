@@ -19,7 +19,7 @@ class TermController < ApplicationController
   
   def show
     @term = Term.find(params[:id])
-    # @klasses = Klass.where(:term_id => params[:id])
+    @klasses = Term.Klasses
   end
     
   def edit
