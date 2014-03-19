@@ -1,0 +1,17 @@
+<h1>Edit Student Info</h1>
+
+<% if @student.errors.any? %>
+  <% @student.errors.full_messages.each do |error_msg| %>
+    <p><%= error_msg %></p>
+  <% end %>
+<% end %>
+
+<form method="post" action="<%= update_student_path(@student.id) %>">
+  <label>First Name</label>
+  <input type="text" name="fname" value="<%= @student.fname %>">
+  
+  <label>Last Name</label>
+  <input type="text" name="lname" value="<%= @student.lname %>">
+  
+  <input type="submit">
+</form>

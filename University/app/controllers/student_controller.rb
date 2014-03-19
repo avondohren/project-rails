@@ -31,11 +31,11 @@ class StudentController < ActionController::Base
   
   def update
     @student = Student.find(params[:id])
-    
-    if @student.update_attributes({:fname => params[:fname], :lname =< params[:lname]})
+    @error = @student.update_attributes({:fname => params[:fname], :lname =< params[:lname]})
+    if @error != false
       redirect_to(student_path(@student.id))
     else
-      render "new"
+      render "edit"
     end
   end
   
