@@ -1,0 +1,31 @@
+<h1>Add a Class</h1>
+
+<% if @klass %>
+  <% @klass.errors.full_messages.each do |error_msg| %>
+    <p><%= error_msg %></p>
+  <% end%>
+<% end %>
+
+<form method="post" action="<%= create_klass_path() %>">
+	<p>
+		Term:<br />
+		<select name="term_id">
+			<% @terms.each do |term| %>
+				<option value="<%= term.id %>"><%= term.name %></option>
+			<% end %>
+		</select>
+	</p>
+	<p>
+		Class Name:<br />
+		<input type="text" name="name" />
+	</p>
+	<p>
+		Teacher:<br />
+		<select name="teacher_id">
+			<% @teachers.each do |teacher| %>
+				<option value="<%= teacher.id %>"><%= teacher.lname %></option>
+			<% end %>
+		</select>
+	</p>
+	<input type="submit">
+</form>

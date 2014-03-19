@@ -1,0 +1,20 @@
+<h1>Show Term</h1>
+<p>Name: <%= @term.name %></p>
+<p><%= link_to("Edit Term", edit_term_path(@term.id)) %> | 
+  <%= link_to("Delete Term", delete_term_path(@term.id), :method => :delete) %></p>
+  
+
+<h1>List of Classes</h1>
+
+<table>
+  <thead>
+    <th>Class Name</th>
+    <th>Teacher</th>
+  </thead>
+  <tbody>
+    <% @klasses.each do |klass| %>
+    <td><%= klass.name %></td>
+    <td><%= klass.teacher.name %></td>
+    <% end %>
+  </tbody>
+</table>

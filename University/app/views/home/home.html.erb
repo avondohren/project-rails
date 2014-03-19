@@ -1,0 +1,48 @@
+<h1>Welcome to the Cool Table University Database</h1>
+
+<h2>Terms</h2>
+<p><a href="/list/terms">List all terms</a></p>
+<p><a href="/add/term">Add a term</a></p>
+<p>View a term</p>
+<ul>
+	<% @terms.each do |term| %>
+		<li><a href="term/<%= term.id %>"><%= term.name %></li>
+	<% end %>
+</ul>
+
+<hr />
+
+<h2>Classes</h2>
+<p><%= link_to("List all classes", :klasses) %></p>
+<p><%= link_to("Add a class", :new_klass)%></p>
+<p>View a class</p>
+<ul>
+	<% @klasses.each do |klass| %>
+		<li><%= link_to(klass.name, :klass) %></li>
+	<% end %>
+</ul>
+
+<hr />
+
+<h2>Teachers</h2>
+<p><a href="/add/teacher">Add a teacher</a></p>
+<p>View a teacher</p>
+<ul>
+	<% @teachers.each do |teacher| %>
+		<li><a href="teacher/<%= teacher.id %>"><%= teacher.name %></li>
+	<% end %>
+</ul>
+<p><a href="/list/teachers">List all teachers</a></p>
+
+<hr />
+
+<h2>Students</h2>
+<p><a href="/add/student">Add a student</a></p>
+<p><a href="/enroll">Enroll a student</a></p>
+<p>View a student</p>
+<ul>
+	<% @students.each do |student| %>
+		<li><a href="student/<%= student.id %>"><%= student.name %></li>
+	<% end %>
+</ul>
+<p><a href="/list/students">List all students</a></p>

@@ -1,4 +1,22 @@
 University::Application.routes.draw do
+  get "/" => 'home#home'
+  
+  get "terms" => 'term#index', :as => :terms
+  get "terms/new" => 'term#new', :as => :new_term
+  get "terms/:id" => 'term#show', :as => :term
+  post "terms" => 'term#create', :as => :create_term
+  get "terms/:id/edit" => 'term#edit', :as => :edit_term
+  post "terms/:id" => 'term#update', :as => :update_term
+  delete "terms/:id" => 'term#delete', :as => :delete_term
+  
+  get "classes" => 'klasses#index', :as => :klasses
+  get "classes/new" => 'klasses#new', :as => :new_klass
+  post "classes" => 'klasses#create', :as => :create_klass
+  get "classes/:id" => 'klasses#show', :as => :klass
+  get "classes/:id/edit" => 'klasses#edit', :as => :edit_klass
+  post "classes/:id" => 'klasses#update', :as => :update_klass
+  delete "classes/:id" => 'klasses#delete', :as=> :delete_klass
+  
   get "students" => 'student#index', :as => :students
   get "students/new" => 'student#new', :as => :new_student
   get "students/:id" => 'student#show', :as => :student
@@ -6,6 +24,7 @@ University::Application.routes.draw do
   get "students/:id/edit" => 'student#edit', :as => :edit_student
   post "students/:id" => 'student#update', :as => :update_student
   delete "students/:id" => 'student#delete', :as => :delete_student
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
