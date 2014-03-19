@@ -1,5 +1,5 @@
-<% if @term.errors.any? %>
-  <% @term.errors.full_messages.each do |msg| %>
+<% if @edit_term %>
+  <% @edit_term.errors.full_messages.each do |msg| %>
     <p class="error"><%= msg %></p>
   <% end %>
 <% end %>

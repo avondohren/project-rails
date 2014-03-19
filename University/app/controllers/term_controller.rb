@@ -28,10 +28,11 @@ class TermController < ApplicationController
   
   def update
     @term = Term.find(params[:id])
+    @edit_term = Term.find(params[:id])
     
-    @term.name = params[:name]
+    @edit_term.name = params[:name]
     
-    if @term.save
+    if @edit_term.save
       redirect_to("#{term_path(@term.id)}")
     else
       render "edit"
