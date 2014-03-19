@@ -1,23 +1,5 @@
 <h1>Show Term</h1>
 <p>Name: <%= @term.name %></p>
 <p><%= link_to("Edit Term", edit_term_path(@term.id)) %> | 
-  <%= link_to("Delete Term", delete_term_path(@term.id)) %></p>
+  <%= link_to("Delete Term", delete_term_path(@term.id), :method => :delete) %></p>
   
-<hr>
-<h2>Class Relationships
-<table>
-	<thead>
-		<th>Term</th>
-		<th>Class Name</th>
-		<th>Teacher</th>
-	</thead>
-	<tbody>
-		<% @klasses.each do |klass| %>
-			<tr>
-				<td><%= Term.find(klass.term_id).name %></td>
-				<td><%= link_to(klass.name, klass_path(klass.id) %></td>
-				<td><%= Teacher.find(klass.teacher_id).name %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>

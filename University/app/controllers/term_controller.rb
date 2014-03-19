@@ -1,4 +1,4 @@
-class TermController < ActionController::Base
+class TermController < ApplicationController
   def index
     @terms = Term.all
   end
@@ -10,7 +10,7 @@ class TermController < ActionController::Base
     name = params[:name]
     @new_term = Term.new({:name => name})
     
-    if new_term.save
+    if @new_term.save
       redirect_to("#{term_path(@new_term.id)}")
     else
       render "new"
@@ -19,7 +19,7 @@ class TermController < ActionController::Base
   
   def show
     @term = Term.find(params[:id])
-    @klasses = Klass.where(:term_id => params[:id])
+    # @klasses = Klass.where(:term_id => params[:id])
   end
     
   def edit
@@ -39,9 +39,9 @@ class TermController < ActionController::Base
   end
   
   def delete
-    @article = Article.find(params[:id])
+    @term = Term.find(params[:id])
     
-    @article.delete
+    @term.delete
     
     redirect_to(:terms)
   end

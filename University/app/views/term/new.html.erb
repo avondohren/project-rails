@@ -5,7 +5,7 @@
 <% end %>
 
 <h1>Add New Term</h1>
-<form method="post" action="<%= :create_term %>">
+<form method="post" action="<%= create_term_path() %>">
 	<p>Name: <input type="text" name="name"></p>
 	<p><input type="submit" value="Add"></p>
 </form>

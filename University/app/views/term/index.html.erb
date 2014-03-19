@@ -9,7 +9,7 @@
 		<% @terms.each do |term| %>
 		<tr>
 			<td><%= term.id %></td>
-			<td>link_to(<%= term.name %>, <%= term_path(term.id) %></td>
+			<td><%= link_to(term.name, term_path(term.id)) %></td>
 		</tr>
 		<% end %>
 	</tbody>
