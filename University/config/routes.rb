@@ -1,5 +1,15 @@
 University::Application.routes.draw do
   get "/" => 'home#home'
+  
+  get "classes" => 'klasses#index', :as => :klasses
+  get "classes/new" => 'klasses#new', :as => :new_klass
+  post "classes" => 'klasses#create', :as => :create_klass
+  get "classes/:id" => 'klasses#show', :as => :klass
+  get "classes/:id/edit" => 'klasses#edit', :as => :edit_klass
+  post "classes/:id" => 'klasses#update', :as => :update_klass
+  delete "classes/:id" => 'klasses#delete', :as=> :delete_klass
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
