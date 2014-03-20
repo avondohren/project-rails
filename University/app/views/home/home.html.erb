@@ -39,7 +39,7 @@
 <h2>Students</h2>
 <p><%= link_to("List all students", :students)%></p>
 <p><%= link_to("Add a student", :new_student)%>
-<p><a href="/enroll">Enroll a student</a></p>
+<p><%= link_to("Enroll a student", :new_enrollment) %></p>
 <p>View a student</p>
 <ul>
 	<% @students.each do |student| %>
