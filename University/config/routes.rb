@@ -25,6 +25,14 @@ University::Application.routes.draw do
   post "students/:id" => 'student#update', :as => :update_student
   delete "students/:id" => 'student#delete', :as => :delete_student
   
+  post "teachers" => 'teacher#create', :as => :create_teacher
+  get "teachers" => 'teacher#index', :as => :teachers
+  get "teachers/new" => 'teacher#new', :as => :new_teacher
+  get "teachers/:id" => 'teacher#show', :as => :teacher
+  get "teachers/:id/edit" => 'teacher#edit', :as => :edit_teacher
+  post "teachers/:id" => 'teacher#update', :as => :update_teacher
+  delete "teachers/:id" => 'teacher#delete', :as => :delete_teacher
+  
   get "enroll" => 'enroll#new', :as => :new_enrollment
   post "enfoll" => 'enroll#create', :as => :create_enrollment
   

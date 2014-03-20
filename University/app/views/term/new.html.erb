@@ -4,8 +4,11 @@
   <% end %>
 <% end %>
 
-<h1>Add New Term</h1>
+<h1>Add a Term</h1>
 <form method="post" action="<%= create_term_path() %>">
-	<p>Name: <input type="text" name="name"></p>
-	<p><input type="submit" value="Add"></p>
+	<p>
+		Term Name:<br />
+		<input type="text" name="name" />
+	</p>
+  <input type="submit" />
 </form>
