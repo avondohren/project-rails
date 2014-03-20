@@ -8,7 +8,7 @@
 <form method="post" action="<%= update_term_path(@term.id) %>">
 	<p>
 		Term Name:<br />
-		<input type="text" name="name" />
+		<input type="text" name="name" value="<%= @term.name %>"/>
 	</p>
   
   <input type="submit" />
