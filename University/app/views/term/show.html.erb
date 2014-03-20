@@ -15,8 +15,8 @@
   </thead>
   <tbody>
     <% @klasses.each do |klass| %>
-    <td><%= link_to(klass.name, klass_path(klass.id) %></td>
-    <td><%= link_to(klass.teacher.name, teacher_path(klass.teacher.id) %></td>
+    <td><%= link_to(klass.name, klass_path(klass.id)) %></td>
+    <td><%= link_to(klass.teacher.name, teacher_path(klass.teacher.id)) %></td>
     <% end %>
   </tbody>
 </table>
