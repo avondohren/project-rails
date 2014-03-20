@@ -27,7 +27,9 @@ class KlassesController < ApplicationController
   end
   
   def edit
+    @terms = Term.all
     @klass = Klass.find(params[:id])
+    @teachers = Teacher.all
   end
   
   def update
