@@ -1,0 +1,4 @@
+<h1><%= @teacher.name %></h1>
+
+<%= link_to("Edit", edit_teacher_path(@teacher.id)) %> | 
+<%= link_to("Delete", delete_teacher_path(@teacher.id), :method => "delete") %>
