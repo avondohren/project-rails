@@ -4,7 +4,7 @@
 	<p>
 		Class:<br />
 		<select name="klass_id">
-			<% @klass.each do |klass| %>
+			<% @klasses.each do |klass| %>
 				<option value="<%= klass.id %>"><%= klass.name %></option>
 			<% end %>
 		</select>
@@ -12,7 +12,7 @@
 	<p>
 		Student:<br />
 		<select name="student_id">
-			<% @student.each do |student| %>
+			<% @students.each do |student| %>
 				<option value="<%= student.id %>"><%= student.name %></option>
 			<% end %>
 		</select>
