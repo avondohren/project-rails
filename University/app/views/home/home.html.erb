@@ -1,8 +1,8 @@
 <h1>Welcome to the Cool Table University Database</h1>
 
 <h2>Terms</h2>
-<p><%= link_to("List all terms", :terms)%></p>
-<p><%= link_to("Add a term", :new_term)%></p>
+<p><%= link_to("List all terms", :terms) %></p>
+<p><%= link_to("Add a term", :new_term) %></p>
 <p>View a term</p>
 <ul>
 	<% @terms.each do |term| %>
@@ -14,7 +14,7 @@
 
 <h2>Classes</h2>
 <p><%= link_to("List all classes", :klasses) %></p>
-<p><%= link_to("Add a class", :new_klass)%></p>
+<p><%= link_to("Add a class", :new_klass) %></p>
 <p>View a class</p>
 <ul>
 	<% @klasses.each do |klass| %>
@@ -25,8 +25,8 @@
 <hr />
 
 <h2>Teachers</h2>
-<p><%= link_to("List all teachers", :teachers )%></p>
-<p><%= link_to("Add a teacher", :new_teacher)%>
+<p><%= link_to("List all teachers", :teachers) %></p>
+<p><%= link_to("Add a teacher", :new_teacher) %>
 <p>View a teacher</p>
 <ul>
 	<% @teachers.each do |teacher| %>
@@ -37,12 +37,12 @@
 <hr />
 
 <h2>Students</h2>
-<p><%= link_to("List all students", :students)%></p>
-<p><%= link_to("Add a student", :new_student)%>
+<p><%= link_to("List all students", :students) %></p>
+<p><%= link_to("Add a student", :new_student) %>
 <p><%= link_to("Enroll a student", :new_enrollment) %></p>
 <p>View a student</p>
 <ul>
 	<% @students.each do |student| %>
-		<li><%= link_to(student.name, student_path(student.id))%></li>
+		<li><%= link_to(student.name, student_path(student.id)) %></li>
 	<% end %>
 </ul>
