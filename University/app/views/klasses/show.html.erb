@@ -1,23 +1,37 @@
-<h1>Class Information</h1>
+<h1><%= @klass.name %></h1>
 
-<p>
-	Term: <%= Term.find(@klass.term_id).name %><br />
-	Class Name: <%= @klass.name %><br />
-	Teacher: <%= Teacher.find(@klass.teacher_id).lname %><br />
-	Students:</p>
 <table>
   <thead>
-    <th>First Name</th>
-    <th>Last Name</th>
+    <tr>
+      <th>Term</th>
+      <th>Teacher</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= link_to(Term.find(@klass.term_id).name, :term) %></td>
+      <td><%= link_to(Teacher.find(@klass.teacher_id).lname, :teacher) %></td>
+    </tr>
+</table>
+
+<p>
+  <%= link_to("Edit", edit_klass_path(@klass.id))%> | 
+  <%= link_to("Delete", delete_klass_path(@klass.id), :method => :delete) %>
+</p>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>Students</th>
+    </tr>
   </thead>
   <tbody>
   	<% @klass.students.each do |student| %>
   		<tr>
-  			<td><%= Student.find(student.id).fname %></td>
-  			<td><%= Student.find(student.id).lname %></td>
+  			<td><%= link_to(Student.find(student.id).name, :student) %></td>
   		</tr>
   	<% end %>
   </tbody>
 </table>
-
-<!-- Add editing and deleting -->
