@@ -30,7 +30,7 @@
   <tbody>
   	<% @klass.students.each do |student| %>
   		<tr>
-  			<td><%= link_to(Student.find(student.id).name, :student) %></td>
+  			<td><%= link_to(Student.find(student.id).name, student_path(student.id)) %></td>
   		</tr>
   	<% end %>
   </tbody>
