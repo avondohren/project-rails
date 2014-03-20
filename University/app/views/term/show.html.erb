@@ -1,8 +1,10 @@
 <h1>Show Term</h1>
+
 <p>Name: <%= @term.name %></p>
 <p><%= link_to("Edit Term", edit_term_path(@term.id)) %> | 
   <%= link_to("Delete Term", delete_term_path(@term.id), :method => :delete) %></p>
-  
+
+<hr />
 
 <h1>List of Classes</h1>
 
@@ -13,8 +15,8 @@
   </thead>
   <tbody>
     <% @klasses.each do |klass| %>
-    <td><%= klass.name %></td>
-    <td><%= klass.teacher.name %></td>
+    <td><%= link_to(klass.name, klass_path(klass.id) %></td>
+    <td><%= link_to(klass.teacher.name, teacher_path(klass.teacher.id) %></td>
     <% end %>
   </tbody>
 </table>
