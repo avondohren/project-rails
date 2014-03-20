@@ -25,6 +25,9 @@ University::Application.routes.draw do
   post "students/:id" => 'student#update', :as => :update_student
   delete "students/:id" => 'student#delete', :as => :delete_student
   
+  get "enroll" => 'enroll#new', :as => :new_enrollment
+  post "enfoll" => 'enroll#create', :as => :create_enrollment
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
