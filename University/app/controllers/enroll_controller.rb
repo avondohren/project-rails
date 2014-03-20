@@ -5,8 +5,8 @@ class EnrollController < ApplicationController
   end
   
   def create
-    @student = Student.find(params[student_id])
-    @klass = Klass.find(params[klass_id])
+    @student = Student.find(params[:student_id])
+    @klass = Klass.find(params[:klass_id])
     
     @klass.students << @student
     
