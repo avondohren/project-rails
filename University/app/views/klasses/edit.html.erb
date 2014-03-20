@@ -23,7 +23,7 @@
 		Teacher:<br />
 		<select name="teacher_id">
 			<% @teachers.each do |teacher| %>
-				<option value="<%= teacher.id %>" selected="<% Teacher.find(@klass.term_id).lname %>"><%= teacher.lname %></option>
+				<option value="<%= teacher.id %>" selected="<% Teacher.find(@klass.teacher_id).lname %>"><%= teacher.lname %></option>
 			<% end %>
 		</select>
 	</p>
