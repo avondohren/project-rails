@@ -1,4 +1,22 @@
-<h1><%= @teacher.name %></h1>
+<h1>Show Teacher</h1>
 
-<%= link_to("Edit", edit_teacher_path(@teacher.id)) %> | 
-<%= link_to("Delete", delete_teacher_path(@teacher.id), :method => "delete") %>
+<p>Name: <%= @teacher.name%></p>
+<p><%= link_to("Edit Teacher", edit_teacher_path(@teacher.id)) %> |
+<%= link_to("Delete Teacher", delete_teacher_path(@teacher.id), :method => :delete) %></p>
+
+<hr />
+
+<h1>List of classes taught by <%= @teacher.name%></h1>
+
+<table>
+  <thead>
+    <th>Class Name</th>
+    <th>Term</th>
+  </thead>
+  <tbody>
+    <% @klasses.each do |klass| %>
+    <td><%= link_to(klass.name, klass_path(klass.id)) %></td>
+    <td><%= link_to(klass.term.name, term_path(klass.term.id)) %></td>
+    <% end %>
+  </tbody>
+</table>
