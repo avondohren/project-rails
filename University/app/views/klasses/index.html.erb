@@ -2,15 +2,23 @@
 
 <table>
 	<thead>
-		<th>Term</th>
+    <th>ID</th>
 		<th>Class Name</th>
+		<th>Term</th>
 		<th>Teacher</th>
 	</thead>
 	<tbody>
 		<% @klasses.each do |klass| %>
-			<td><%= Term.find(klass.term_id).name %></td>
-			<td><%= klass.name %></td>
-			<td><%= Teacher.find(klass.teacher_id).lname %></td>
+      <tr>
+        <td><%= klass.id %>
+  			<td><%= link_to(klass.name, klass_path(klass.id)) %></td>
+  			<td><%= link_to(Term.find(klass.term_id).name, term_path(klass.term_id)) %></td>
+  			<td><%= link_to(Teacher.find(klass.teacher_id).lname, teacher_path(klass.teacher_id)) %></td>
+      </tr>
 		<% end %>
 	</tbody>
 </table>
+
+<hr />
+
+<%= link_to("New Class", :new_klass)%>

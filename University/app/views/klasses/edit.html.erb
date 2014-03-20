@@ -17,13 +17,13 @@
 	</p>
 	<p>
 		Class Name:<br />
-		<input type="text" name="name" />
+		<input type="text" name="name" value="<%= @klass.name %>" />
 	</p>
 	<p>
 		Teacher:<br />
 		<select name="teacher_id">
 			<% @teachers.each do |teacher| %>
-				<option value="<%= teacher.id %>" selected="<% Teacher.find(@klass.term_id).lname %>"><%= teacher.lname %></option>
+				<option value="<%= teacher.id %>" selected="<% Teacher.find(@klass.teacher_id).lname %>"><%= teacher.lname %></option>
 			<% end %>
 		</select>
 	</p>
