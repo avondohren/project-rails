@@ -25,14 +25,14 @@
 <hr />
 
 <h2>Teachers</h2>
-<p><a href="/add/teacher">Add a teacher</a></p>
+<p><%= link_to("List all teachers", :teachers )%></p>
+<p><%= link_to("Add a teacher", :new_teacher)%>
 <p>View a teacher</p>
 <ul>
 	<% @teachers.each do |teacher| %>
-		<li><a href="teacher/<%= teacher.id %>"><%= teacher.name %></li>
+		<li><%= link_to(teacher.name, teacher_path(teacher.id)) %></li>
 	<% end %>
 </ul>
-<p><a href="/list/teachers">List all teachers</a></p>
 
 <hr />
 
