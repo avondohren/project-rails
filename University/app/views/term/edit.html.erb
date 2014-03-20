@@ -6,6 +6,10 @@
 
 <h1>Edit Term</h1>
 <form method="post" action="<%= update_term_path(@term.id) %>">
-	<p>Name: <input type="text" name="name" value="<%= @term.name %>"></p>
-	<p><input type="submit" value="Update"></p>
+	<p>
+		Term Name:<br />
+		<input type="text" name="name" value="<%= @term.name %>"/>
+	</p>
+  
+  <input type="submit" />
 </form>
