@@ -1,0 +1,23 @@
+<h1><%= @student.name %></h1>
+
+<!-- <%= link_to("Edit", edit_student_path(@student.id)) %> |  -->
+<!-- <%= link_to("Delete", delete_student_path(@student.id), :method => "delete") %> -->
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Teacher</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @student.klasses.each do |klass| %>
+      <tr>
+        <td><%= link_to(klass.name, klass_path(klass.id)) %></td>
+        <td><%= link_to(klass.teacher.name, teacher_path(klass.teacher.id)) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

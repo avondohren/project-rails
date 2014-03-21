@@ -1,0 +1,9 @@
+<h1>Add New Student</h1>
+
+<% if @student %>
+  <% @student.errors.full_messages.each do |error_msg| %>
+    <p><%= error_msg %></p>
+  <% end %>
+<% end %>
+
+<%= render :partial => "form" %>
