@@ -1,13 +1,7 @@
 University::Application.routes.draw do
   get "/" => 'home#home'
   
-  get "terms" => 'term#index', :as => :terms
-  get "terms/new" => 'term#new', :as => :new_term
-  get "terms/:id" => 'term#show', :as => :term
-  post "terms" => 'term#create', :as => :create_term
-  get "terms/:id/edit" => 'term#edit', :as => :edit_term
-  post "terms/:id" => 'term#update', :as => :update_term
-  delete "terms/:id" => 'term#delete', :as => :delete_term
+  resources :terms
   
   get "classes" => 'klasses#index', :as => :klasses
   get "classes/new" => 'klasses#new', :as => :new_klass
