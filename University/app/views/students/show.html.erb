@@ -1,7 +1,7 @@
 <h1><%= @student.name %></h1>
 
-<!-- <%= link_to("Edit", edit_student_path(@student.id)) %> |  -->
-<!-- <%= link_to("Delete", delete_student_path(@student.id), :method => "delete") %> -->
+<%= link_to("Edit Student", edit_student_path(@student.id)) %> | 
+<%= link_to("Delete Student", delete_student_path(@student.id), :method => :delete) %>
 
 <hr />
 
