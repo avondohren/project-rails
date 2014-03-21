@@ -1,0 +1,21 @@
+<% if @klass_save %>
+  <% @klass_save.errors.full_messages.each do |error_msg| %>
+    <p><%= error_msg %></p>
+  <% end%>
+<% end %>
+
+<%= form_for @klass do |f| %>
+  <p>
+    <%= f.label :term_id, "Term:" %><br />
+    <%= collection_select(:klass, :term_id, @terms, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :name, "Class Name:" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :teacher_id, "Teacher:" %><br />
+    <%= collection_select(:klass, :teacher_id, @teachers, :id, :name) %>
+  </p>
+  <%= f.submit "Submit" %>
+<% end %>
