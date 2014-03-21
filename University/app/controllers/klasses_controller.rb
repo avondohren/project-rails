@@ -4,20 +4,20 @@ class KlassesController < ApplicationController
   end
   
   def new
+    @klass = Klass.new
     @terms = Term.all
     @teachers = Teacher.all
   end
   
   def create
-    @klass = Klass.new({
-      :term_id => params[:term_id],
-      :name => params[:name],
-      :teacher_id => params[:teacher_id]
-    })
+    @klass_save = Klass.new(params[:klass])
     
-    if @klass.save
+    if @klass_save.save
       redirect_to(:klasses)
     else
+      @klass = Klass.new
+      @terms = Term.all
+      @teachers = Teacher.all
       render "new"
     end
   end
@@ -33,21 +33,21 @@ class KlassesController < ApplicationController
   end
   
   def update
-    @klass = Klass.find(params[:id])
-    @klass_edited = Klass.find(params[:id])
+    @klass_save = Klass.find(params[:id])
     
-    @klass_edited.term_id = params[:term_id]
-    @klass_edited.name = params[:name]
-    @klass_edited.teacher_id = params[:teacher_id]
+    @klass_save.update_attributes(params[:klass])
     
-    if @klass_edited.save
+    if @klass_save.save
       redirect_to(:klasses)
     else
+      @klass = Klass.find(params[:id])
+      @terms = Term.all
+      @teachers = Teacher.all
       render "edit"
     end
   end
   
-  def delete
+  def destroy
     @klass = Klass.find(params[:id])
     
     @klass.delete

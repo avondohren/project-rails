@@ -9,13 +9,15 @@ University::Application.routes.draw do
   post "terms/:id" => 'term#update', :as => :update_term
   delete "terms/:id" => 'term#delete', :as => :delete_term
   
-  get "classes" => 'klasses#index', :as => :klasses
-  get "classes/new" => 'klasses#new', :as => :new_klass
-  post "classes" => 'klasses#create', :as => :create_klass
-  get "classes/:id" => 'klasses#show', :as => :klass
-  get "classes/:id/edit" => 'klasses#edit', :as => :edit_klass
-  post "classes/:id" => 'klasses#update', :as => :update_klass
-  delete "classes/:id" => 'klasses#delete', :as=> :delete_klass
+  resources :klasses, :path => 'classes'
+  
+  # get "classes" => 'klasses#index', :as => :klasses
+  # get "classes/new" => 'klasses#new', :as => :new_klass
+  # post "classes" => 'klasses#create', :as => :create_klass
+  # get "classes/:id" => 'klasses#show', :as => :klass
+  # get "classes/:id/edit" => 'klasses#edit', :as => :edit_klass
+  # post "classes/:id" => 'klasses#update', :as => :update_klass
+  # delete "classes/:id" => 'klasses#delete', :as=> :delete_klass
   
   get "students" => 'student#index', :as => :students
   get "students/new" => 'student#new', :as => :new_student

@@ -16,7 +16,7 @@
 
 <p>
   <%= link_to("Edit", edit_klass_path(@klass.id))%> | 
-  <%= link_to("Delete", delete_klass_path(@klass.id), :method => :delete) %>
+  <%= link_to("Delete", klass_path(@klass.id), :method => :delete) %>
 </p>
 
 <hr />

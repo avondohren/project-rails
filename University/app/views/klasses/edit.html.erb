@@ -1,31 +1,3 @@
 <h1>Edit a Class</h1>
 
-<% if @klass_edited %>
-  <% @klass_edited.errors.full_messages.each do |error_msg| %>
-    <p><%= error_msg %></p>
-  <% end%>
-<% end %>
-
-<form method="post" action="<%= update_klass_path(@klass.id) %>">
-	<p>
-		Term:<br />
-		<select name="term_id">
-			<% @terms.each do |term| %>
-				<option value="<%= term.id %>" selected="<% Term.find(@klass.term_id).name %>"><%= term.name %></option>
-			<% end %>
-		</select>
-	</p>
-	<p>
-		Class Name:<br />
-		<input type="text" name="name" value="<%= @klass.name %>" />
-	</p>
-	<p>
-		Teacher:<br />
-		<select name="teacher_id">
-			<% @teachers.each do |teacher| %>
-				<option value="<%= teacher.id %>" selected="<% Teacher.find(@klass.teacher_id).lname %>"><%= teacher.lname %></option>
-			<% end %>
-		</select>
-	</p>
-	<input type="submit">
-</form>
+<%= render :partial => "form" %>
